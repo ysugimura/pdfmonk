@@ -162,9 +162,15 @@ public class MkCell implements MkDuplicatable<MkCell> {
     return MkAlign.getByValue(impl.cell.getHorizontalAlignment());
   }
   
-  /** セルのアラインメントを指定する */
+  /** セルの水平アラインメントを指定する */
   public MkCell setAlign(MkAlign align) {
     modifyImpl().cell.setHorizontalAlignment(align.value);    
+    return this;
+  }
+  
+  /** セルの垂直アラインメントを指定する */
+  public MkCell setVerticalAlign(MkVerticalAlign align) {
+    modifyImpl().cell.setVerticalAlignment(align.value);    
     return this;
   }
   

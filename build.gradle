@@ -30,7 +30,7 @@ publishing {
     target(MavenPublication) {
       groupId  'com.cm55'
       artifactId 'pdfmonk'
-      version '1.0.0'    
+      version '1.0.1'    
       from components.java   
       artifact sourceJar
     }
@@ -53,12 +53,12 @@ sourceSets {
       srcDir 'src'; exclude '**/*Test.java'
     }
   }
-  test {
+  sample {
     java {
-      srcDir 'src_test'; exclude '**/*Test.java'
+      srcDir 'sample';
     }
     resources {
-      srcDir 'src_test'; exclude '**/*Test.java'
+      srcDir 'sample';
     }
   }
 }

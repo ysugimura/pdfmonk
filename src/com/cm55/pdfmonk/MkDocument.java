@@ -52,6 +52,18 @@ public class MkDocument  {
   
   /** 改ページが行われた場合のコールバック */
   private Consumer<Integer>newPageCallback;
+
+  /**
+   * ドキュメントをオープンする。その際、ドキュメントのページサイズと出力先ファイルを指定する。
+   * このシステムでは、一つのドキュメント内のすべてのページは同じジオメトリを持つものとする。
+   * @param ctx コンテキスト
+   * @param geo ジオメトリ
+   * @param out 出力ファイル
+   * @throws IOException
+   */
+  public MkDocument(MkContext ctx, MkGeometry geo, File out) throws IOException {
+    this(ctx, geo, new FileOutputStream(out));
+  }
   
   /**
    * ドキュメントをオープンする。その際、ドキュメントのページサイズと出力先ストリームを指定する。

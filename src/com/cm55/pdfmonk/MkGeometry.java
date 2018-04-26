@@ -47,6 +47,16 @@ public class MkGeometry {
     return new MkDimension(MkUnit.MM, getPrintWidth().mmValue(), getPrintHeight().mmValue());
   }
   
+  /** 印刷領域左下座標を取得する */
+  public MkDimension getBottomLeft() {
+    return new MkDimension(MkLen.ZERO, getPrintHeight());
+  }
+
+  /** 印刷領域右上座標を取得する */
+  public MkDimension getTopRight() {
+    return new MkDimension(getPrintWidth(), MkLen.ZERO);
+  }
+  
   /** デバッグ用出力 */
   @Override
   public String toString() {

@@ -3,7 +3,7 @@ package com.cm55.pdfmonk;
 import com.itextpdf.text.*;
 
 /**
- * アラインメント
+ * 水平アラインメント
  */
 public enum MkAlign {
   LEFT(Element.ALIGN_LEFT),

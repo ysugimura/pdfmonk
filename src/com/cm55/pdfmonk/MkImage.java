@@ -1,6 +1,7 @@
 package com.cm55.pdfmonk;
 
 import java.io.*;
+import java.net.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
@@ -16,6 +17,11 @@ public class MkImage implements MkElement {
 
   private Image image;
 
+  /** イメージURLを指定して作成する */
+  public MkImage(URL url) throws IOException {
+    this(new File(url.getPath()));
+  }
+  
   /** イメージファイルを指定して作成する */
   public MkImage(File file) throws IOException {
     this(Files.readAllBytes(file.toPath()));
